@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+.vercel/
+*.bak
+*.log
+videos/source/
+bundle.gz
+polo-avenue/
