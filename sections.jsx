@@ -75,7 +75,7 @@ const HOUSES = [
   { name: 'Dolce & Gabbana',     cat: 'Maison · Italy',     cls: 'col-4 tall', img: 'images/house-04-dolce-gabbana.jpg' },
   { name: 'Valentino',           cat: 'Maison · Italy',     cls: 'col-4 tall', img: 'images/house-05-valentino.jpg' },
   { name: 'Casablanca',          cat: 'Maison · France',    cls: 'col-6 wide', img: 'images/house-06-casablanca.jpg', objPos: 'center 18%' },
-  { name: 'Camilla',             cat: 'Maison · Australia', cls: 'col-6 wide', img: 'images/house-07-camilla.jpg',    objPos: 'center 22%' },
+  { name: 'Camilla',             cat: 'Maison · Australia', cls: 'col-6 wide', img: 'images/house-07-camilla.jpg',    objPos: 'center 8%' },
   { name: 'Versace',             cat: 'Maison · Italy',     cls: 'col-4 tall', img: 'images/house-08-versace.jpg' },
   { name: 'Anna-Karin Karlsson', cat: 'Eyewear · Sweden',   cls: 'col-4 tall', img: 'images/house-09-akk.jpg' },
   { name: 'Aquazzura',           cat: 'Maison · Italy',     cls: 'col-4 tall', img: 'images/house-10-aquazzura.jpg' },
