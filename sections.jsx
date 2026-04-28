@@ -180,9 +180,7 @@ const Boutique = () => (
 const Founder = () => (
   <section className="founder" id="founder">
     <div className="founder-grid">
-      <Reveal mode="clip">
-        <img className="portrait" src="images/jennifer.jpg" alt="Jennifer Obayuwana, Executive Director of Polo Avenue" loading="lazy" />
-      </Reveal>
+      <img className="portrait" src="images/jennifer.jpg" alt="Jennifer Obayuwana, Executive Director of Polo Avenue" loading="eager" />
       <div className="copy">
         <Reveal>
           <div className="eyebrow"><span style={{ color: 'var(--gold-deep)' }}>04</span><span style={{ margin: '0 10px', opacity: 0.4 }}>—</span>The House</div>
