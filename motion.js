@@ -118,22 +118,55 @@
   }
 
   // ============================================
-  // Hero videos: ensure they play (Safari sometimes needs a poke)
+  // Hero videos: ensure they play (mobile Safari + Chrome strictness)
   // ============================================
   function pokeHeroVideos() {
     document.querySelectorAll('.hero-video').forEach((v) => {
+      // Force properties (not just attributes) — iOS Safari checks these at play() time
       v.muted = true;
-      const tryPlay = () => v.play().catch(() => {});
+      v.playsInline = true;
+      v.autoplay = true;
+      v.setAttribute('playsinline', '');
+      v.setAttribute('webkit-playsinline', '');
+      const tryPlay = () => { try { const p = v.play(); if (p) p.catch(() => {}); } catch (e) {} };
       tryPlay();
       v.addEventListener('canplay', tryPlay, { once: true });
+      v.addEventListener('loadedmetadata', tryPlay, { once: true });
+      v.addEventListener('loadeddata', tryPlay, { once: true });
     });
   }
+  // Fallback for stubborn mobile browsers: any first user gesture wakes the video
+  let videoTouchKickerArmed = false;
+  function armVideoTouchKicker() {
+    if (videoTouchKickerArmed) return;
+    videoTouchKickerArmed = true;
+    const wake = () => { pokeHeroVideos(); };
+    document.addEventListener('touchstart', wake, { once: true, passive: true });
+    document.addEventListener('click',      wake, { once: true });
+    document.addEventListener('scroll',     wake, { once: true, passive: true });
+  }
+  // Also re-poke when tab becomes visible again (mobile backgrounding kills video)
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) pokeHeroVideos();
+  });
 
   // ============================================
   // Init — wait for React-rendered elements
   // ============================================
   function init() {
     initSmoothScroll();
+    armVideoTouchKicker();
+    // Hero videos can be poked as soon as they exist — don't wait for the rest of React to mount
+    let videoAttempts = 0;
+    const tryPokeVideos = () => {
+      if (document.querySelectorAll('.hero-video').length > 0) {
+        pokeHeroVideos();
+      } else if (videoAttempts++ < 60) {
+        setTimeout(tryPokeVideos, 80);
+      }
+    };
+    tryPokeVideos();
+    // Other interactive bits wait for full React render
     let attempts = 0;
     const tryInit = () => {
       const ready = document.querySelector('.btn-gold') && document.querySelector('.watch-card');
