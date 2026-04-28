@@ -11,7 +11,7 @@ const Nav = ({ scrolled, onMenuToggle, menuOpen }) => (
       <a href="#watches">Watches</a>
       <a href="#houses">Jewellery</a>
       <a href="#boutique">The Boutique</a>
-      <a href="#gallery">Gallery</a>
+      <a href="#gallery">Summer 2022</a>
       <a href="#contact">Contact</a>
     </div>
     <div className="right">
@@ -217,21 +217,20 @@ const Marquee = () => {
 };
 
 const GALLERY = [
-  { img: 'images/gallery-1.jpg', tag: 'EDITORIAL', dim: '1080 × 1350', cap: 'Jennifer for Robb Report Africa.',  cls: 'g-tall' },
-  { img: 'images/gallery-2.jpg', tag: 'STILL LIFE', dim: '1080 × 1080', cap: 'An afternoon at the counter.',     cls: 'g-wide' },
-  { img: 'images/gallery-3.jpg', tag: 'CAMPAIGN',   dim: '1080 × 1080', cap: 'Lavender, in soft light.',         cls: 'g-sq'   },
-  { img: 'images/gallery-4.jpg', tag: 'EYEWEAR',    dim: '1080 × 1080', cap: 'Statement, framed.',                cls: 'g-sq'   },
-  { img: 'images/gallery-5.jpg', tag: 'COUTURE EYEWEAR', dim: '1080 × 1080', cap: 'Couture eyewear, up close.',   cls: 'g-wide' },
-  { img: 'images/gallery-6.jpg', tag: 'POLO PENTHOUSE', dim: '1080 × 1080', cap: 'At the Polo Penthouse with Anna-Karin Karlsson.', cls: 'g-tall' },
+  { img: 'images/summer-1.jpg', tag: 'SS22', dim: '1963 × 2560', cap: 'Bottega tide, runway frame.',           cls: 'g-tall' },
+  { img: 'images/summer-2.jpg', tag: 'SS22', dim: '1963 × 2560', cap: 'Polka dots, prints, and a motorbike.',  cls: 'g-tall' },
+  { img: 'images/summer-3.jpg', tag: 'SS22', dim: '1963 × 2560', cap: 'D&G monogram, with company.',           cls: 'g-tall' },
+  { img: 'images/summer-4.jpg', tag: 'SS22', dim: '1963 × 2560', cap: 'A study in restraint.',                  cls: 'g-tall' },
+  { img: 'images/summer-5.jpg', tag: 'SS22', dim: '1963 × 2560', cap: 'Tailoring, ascending.',                  cls: 'g-tall' },
 ];
 
 const Gallery = () => (
   <section className="gallery" id="gallery">
     <SectionHead
       num="05"
-      eyebrow="The Gallery"
-      title={`Inside the <em>house</em>.`}
-      body="Six rooms, three floors. A boutique built like a private residence — for those who prefer to consider a piece in the quiet."
+      eyebrow="The Summer Collection"
+      title={`Summer 2022, captured by <em>Daniel Obasi</em>.`}
+      body="A sequel to the SS21 campaign. A meditation on the evolution of personal style — refracted through the maisons we carry, on the bodies of the city we live in."
       ctaLabel="Plan a visit"
       ctaHref="#contact"
     />
