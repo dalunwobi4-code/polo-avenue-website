@@ -118,7 +118,7 @@ const WATCHES = [
   { brand: 'Rolex',   piece: 'Cosmograph Daytona',  ref: 'Rainbow · Rose Gold',   tag: 'RAINBOW',  img: 'images/rolex.jpeg' },
   { brand: 'Cartier', piece: 'Ballon Bleu',          ref: 'Stainless · Blue Hands', tag: 'BALLON BLEU', img: 'images/cartier.jpg' },
   { brand: 'Chopard', piece: 'Alpine Eagle XL Chrono', ref: 'Lucent Steel · Blue', tag: 'ALPINE EAGLE', img: 'images/chopard.jpg' },
-  { brand: 'Piaget',  piece: 'Polo S',                ref: 'Steel · Blue Dial',     tag: 'POLO S', img: 'images/piaget.jpg', objPos: 'center center' },
+  { brand: 'Piaget',  piece: 'Polo Perpetual Calendar', ref: 'Emerald Bezel · Malachite Dial', tag: 'POLO PERPETUAL', img: 'images/piaget.jpeg' },
 ];
 
 const Watches = () => (
