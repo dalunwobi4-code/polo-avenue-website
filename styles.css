@@ -736,3 +736,15 @@ body { transition: opacity 280ms ease; }
 @media (max-width: 768px) {
   .gallery-grid { grid-template-columns: 1fr; }
 }
+
+/* Hide iOS Safari's "tap to play" overlay button before the hero video starts.
+   The play button appears on iOS when a video hasn't yet successfully autoplayed.
+   These pseudo-elements are how Safari exposes its native media UI. */
+.hero-video::-webkit-media-controls-start-playback-button,
+.hero-video::-webkit-media-controls-overlay-play-button,
+.hero-video::-webkit-media-controls-panel,
+.hero-video::-webkit-media-controls {
+  display: none !important;
+  -webkit-appearance: none !important;
+  opacity: 0 !important;
+}
