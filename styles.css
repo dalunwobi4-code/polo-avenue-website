@@ -664,3 +664,37 @@ section { padding: clamp(80px, 10vw, 140px) var(--gutter); position: relative; }
 
 /* Loading anti-flash: show body once React has mounted */
 body { transition: opacity 280ms ease; }
+
+/* ============================================================
+   REAL IMAGE STYLES — replaces Placeholder rectangles with photos
+   ============================================================ */
+
+.house-card .house-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  background: var(--bone-2);
+}
+
+.boutique .bg .bg-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  background: var(--ink-2);
+}
+
+.founder-grid .portrait {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 30%;
+  background: var(--bone-2);
+  display: block;
+}
+
+/* Hide hover thumbs for v1 — re-enable when we have real product close-ups */
+.house-card .house-thumbs { display: none !important; }

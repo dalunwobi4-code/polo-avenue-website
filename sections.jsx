@@ -69,21 +69,23 @@ const Hero = () => (
 );
 
 const HOUSES = [
-  { name: 'Gucci', cat: 'Maison · Italy', cls: 'col-7 tall', tag: 'EDITORIAL — F/W 26' },
-  { name: 'Bottega Veneta', cat: 'Maison · Italy', cls: 'col-5 tall', tag: 'INTRECCIATO STUDY' },
-  { name: 'Saint Laurent', cat: 'Maison · France', cls: 'col-4 tall', tag: 'TAILORING' },
-  { name: 'Dolce & Gabbana', cat: 'Maison · Italy', cls: 'col-4 tall', tag: 'BAROQUE EVENING' },
-  { name: 'Valentino', cat: 'Maison · Italy', cls: 'col-4 tall', tag: 'COUTURE EXTRACT' },
-  { name: 'Tom Ford', cat: 'Maison · USA', cls: 'col-6 wide', tag: 'BLACK ORCHID' },
-  { name: 'Loro Piana', cat: 'Maison · Italy', cls: 'col-6 wide', tag: 'CASHMERE — VICUÑA' },
-  { name: 'Versace', cat: 'Maison · Italy', cls: 'col-4 tall', tag: 'MEDUSA' },
-  { name: 'Roberto Cavalli', cat: 'Maison · Italy', cls: 'col-4 tall', tag: 'PRINTED SILK' },
-  { name: 'Cartier', cat: 'Joaillier · France', cls: 'col-4 tall', tag: 'LOVE — TRINITY' },
+  { name: 'AMIRI',               cat: 'Maison · USA',       cls: 'col-7 tall', img: 'images/house-01-amiri.jpg' },
+  { name: 'Bottega Veneta',      cat: 'Maison · Italy',     cls: 'col-5 tall', img: 'images/house-02-bottega.jpg' },
+  { name: 'Saint Laurent',       cat: 'Maison · France',    cls: 'col-4 tall', img: 'images/house-03-saint-laurent.jpg' },
+  { name: 'Dolce & Gabbana',     cat: 'Maison · Italy',     cls: 'col-4 tall', img: 'images/house-04-dolce-gabbana.jpg' },
+  { name: 'Valentino',           cat: 'Maison · Italy',     cls: 'col-4 tall', img: 'images/house-05-valentino.jpg' },
+  { name: 'Casablanca',          cat: 'Maison · France',    cls: 'col-6 wide', img: 'images/house-06-casablanca.jpg' },
+  { name: 'Camilla',             cat: 'Maison · Australia', cls: 'col-6 wide', img: 'images/house-07-camilla.jpg' },
+  { name: 'Versace',             cat: 'Maison · Italy',     cls: 'col-4 tall', img: 'images/house-08-versace.jpg' },
+  { name: 'Anna-Karin Karlsson', cat: 'Eyewear · Sweden',   cls: 'col-4 tall', img: 'images/house-09-akk.jpg' },
+  { name: 'Aquazzura',           cat: 'Maison · Italy',     cls: 'col-4 tall', img: 'images/house-10-aquazzura.jpg' },
 ];
 
 const HouseCard = ({ h, idx }) => (
   <Reveal delay={idx * 60} className={`house-card ${h.cls}`}>
-    <Placeholder className="ph-cover" tag={h.tag} dim={h.name.toUpperCase()} />
+    {h.img
+      ? <img className="ph-cover house-img" src={h.img} alt={h.name} loading="lazy" />
+      : <Placeholder className="ph-cover" tag={h.tag} dim={h.name.toUpperCase()} />}
     <div className="house-thumbs">
       <Placeholder className="thumb" tag="01" />
       <Placeholder className="thumb" tag="02" />
@@ -151,7 +153,7 @@ const Watches = () => (
 
 const Boutique = () => (
   <section id="boutique" className="boutique">
-    <div className="bg"><Placeholder tag="BOUTIQUE INTERIOR — FULL BLEED" dim="3840 × 2160" /></div>
+    <div className="bg"><img className="bg-img" src="images/boutique.jpg" alt="Polo Avenue, 166 Ozumba Mbadiwe, Victoria Island" loading="lazy" /></div>
     <div className="content">
       <Reveal>
         <div className="eyebrow eyebrow-light"><span style={{ color: 'var(--gold)' }}>03</span><span style={{ margin: '0 10px', opacity: 0.4 }}>—</span>The Boutique</div>
@@ -177,14 +179,14 @@ const Founder = () => (
   <section className="founder" id="founder">
     <div className="founder-grid">
       <Reveal mode="clip">
-        <Placeholder className="portrait" tag="JOHN OBAYUWANA — PORTRAIT" dim="2400 × 3000" />
+        <img className="portrait" src="images/founder-jennifer.jpg" alt="Jennifer Obayuwana, Executive Director of Polo Avenue" loading="lazy" />
       </Reveal>
       <div className="copy">
         <Reveal>
           <div className="eyebrow"><span style={{ color: 'var(--gold-deep)' }}>04</span><span style={{ margin: '0 10px', opacity: 0.4 }}>—</span>The House</div>
           <h2>Polo Avenue, <em>since</em> 2003.</h2>
-          <p className="lede">Founded by John Obayuwana — the first to bring authorized luxury retail to Nigeria.</p>
-          <p>Two decades ago, fine pieces in Lagos meant a suitcase from Dubai or a parallel import with a printed receipt. <strong>John Obayuwana built the alternative</strong> — house-by-house, contract-by-contract — until each maison signed Polo Avenue as their authorized point of presence.</p>
+          <p className="lede">Led today by <strong>Jennifer Obayuwana</strong>, Executive Director — recognised in 2025 as MIPAD's Most Influential Luxury Personality of the Year.</p>
+          <p>Two decades ago, fine pieces in Lagos meant a suitcase from Dubai or a parallel import with a printed receipt. The Obayuwana family built the alternative — house by house, contract by contract — until each maison signed Polo Avenue as their authorised point of presence.</p>
           <p>Today we are stocked, serviced and warrantied directly by the houses we carry. Our watchmakers, tailors and after-care team are certified by them. The pieces in our boutique are the same pieces shown in Milan, in Paris, in Geneva — sourced through the front door, not the side.</p>
           <div className="stats">
             <div className="stat"><div className="num">2003</div><div className="lbl">Founded · Lagos</div></div>
