@@ -181,7 +181,7 @@ const Founder = () => (
   <section className="founder" id="founder">
     <div className="founder-grid">
       <Reveal mode="clip">
-        <img className="portrait" src="images/founder-jennifer.jpg" alt="Jennifer Obayuwana, Executive Director of Polo Avenue" loading="lazy" />
+        <img className="portrait" src="images/jennifer.jpg" alt="Jennifer Obayuwana, Executive Director of Polo Avenue" loading="lazy" />
       </Reveal>
       <div className="copy">
         <Reveal>
