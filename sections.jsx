@@ -155,7 +155,7 @@ const Watches = () => (
 
 const Boutique = () => (
   <section id="boutique" className="boutique">
-    <div className="bg"><img className="bg-img" src="images/boutique.jpg" alt="Polo Avenue, 166 Ozumba Mbadiwe, Victoria Island" loading="lazy" /></div>
+    <div className="bg"><img className="bg-img" src="images/boutique.png" alt="Polo Avenue, 166 Ozumba Mbadiwe, Victoria Island" loading="eager" /></div>
     <div className="content">
       <Reveal>
         <div className="eyebrow eyebrow-light"><span style={{ color: 'var(--gold)' }}>03</span><span style={{ margin: '0 10px', opacity: 0.4 }}>—</span>The Boutique</div>
