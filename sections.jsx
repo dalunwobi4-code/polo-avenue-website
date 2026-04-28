@@ -115,10 +115,10 @@ const Houses = () => (
 );
 
 const WATCHES = [
-  { brand: 'Rolex', piece: 'Datejust 41', ref: 'Ref. 126334', tag: 'OYSTERSTEEL' },
-  { brand: 'Cartier', piece: 'Santos de Cartier', ref: 'Large model', tag: 'STEEL & GOLD' },
-  { brand: 'Chopard', piece: 'L.U.C XPS', ref: 'Ref. 161948', tag: 'ROSE GOLD' },
-  { brand: 'Piaget', piece: 'Polo Date', ref: 'Ref. G0A41001', tag: 'BLUE DIAL' },
+  { brand: 'Rolex',   piece: 'Datejust 41',       ref: 'Ref. 126334',           tag: 'OYSTERSTEEL'        },
+  { brand: 'Cartier', piece: 'Pasha de Cartier',  ref: 'Diamonds · Rose Gold',  tag: 'PASHA',  img: 'images/watch-cartier.jpg' },
+  { brand: 'Chopard', piece: 'L.U.C XPS',         ref: 'Ref. 161948',           tag: 'ROSE GOLD'          },
+  { brand: 'Piaget',  piece: 'Polo Date',         ref: 'Ref. G0A41001',         tag: 'BLUE DIAL'          },
 ];
 
 const Watches = () => (
@@ -135,7 +135,9 @@ const Watches = () => (
     <div className="watches-grid">
       {WATCHES.map((w, i) => (
         <Reveal key={w.brand} delay={i * 80} className="watch-card">
-          <Placeholder className="ph-cover" tag={w.tag} dim={w.brand.toUpperCase()} />
+          {w.img
+            ? <img className="ph-cover watch-img" src={w.img} alt={`${w.brand} ${w.piece}`} loading="lazy" />
+            : <Placeholder className="ph-cover" tag={w.tag} dim={w.brand.toUpperCase()} />}
           <div className="meta">
             <span className="num">0{i + 1} / Maison</span>
             <h4>{w.brand}</h4>
@@ -215,12 +217,12 @@ const Marquee = () => {
 };
 
 const GALLERY = [
-  { tag: 'BOUTIQUE — GROUND FLOOR', dim: '2400 × 3000', cap: 'The hall, in soft morning light.', cls: 'g-tall' },
-  { tag: 'WATCH ROOM — GENEVA SEAL', dim: '1800 × 1200', cap: 'The watch room.', cls: 'g-wide' },
-  { tag: 'DRESSING SUITE — N° 02', dim: '1200 × 1500', cap: 'Private dressing, second floor.', cls: 'g-sq' },
-  { tag: 'TAILORING — IN-HOUSE', dim: '1200 × 1500', cap: 'Final fitting.', cls: 'g-sq' },
-  { tag: 'JEWELLERY VITRINE', dim: '1800 × 1200', cap: 'Vitrine, evening.', cls: 'g-wide' },
-  { tag: 'AFTER-CARE BENCH', dim: '2400 × 3000', cap: 'After-care bench, certified.', cls: 'g-tall' },
+  { img: 'images/gallery-1.jpg', tag: 'EDITORIAL', dim: '1080 × 1350', cap: 'Jennifer for Robb Report Africa.',  cls: 'g-tall' },
+  { img: 'images/gallery-2.jpg', tag: 'STILL LIFE', dim: '1080 × 1080', cap: 'An afternoon at the counter.',     cls: 'g-wide' },
+  { img: 'images/gallery-3.jpg', tag: 'CAMPAIGN',   dim: '1080 × 1080', cap: 'Lavender, in soft light.',         cls: 'g-sq'   },
+  { img: 'images/gallery-4.jpg', tag: 'EYEWEAR',    dim: '1080 × 1080', cap: 'Statement, framed.',                cls: 'g-sq'   },
+  { img: 'images/gallery-5.jpg', tag: 'COUTURE EYEWEAR', dim: '1080 × 1080', cap: 'Couture eyewear, up close.',   cls: 'g-wide' },
+  { img: 'images/gallery-6.jpg', tag: 'POLO PENTHOUSE', dim: '1080 × 1080', cap: 'At the Polo Penthouse with Anna-Karin Karlsson.', cls: 'g-tall' },
 ];
 
 const Gallery = () => (
@@ -235,8 +237,10 @@ const Gallery = () => (
     />
     <div className="gallery-grid">
       {GALLERY.map((g, i) => (
-        <Reveal key={g.tag} delay={i * 70} className={`gallery-tile ${g.cls}`}>
-          <Placeholder className="ph-cover" tag={g.tag} dim={g.dim} light={i % 3 === 1} />
+        <Reveal key={g.cap} delay={i * 70} className={`gallery-tile ${g.cls}`}>
+          {g.img
+            ? <img className="ph-cover gallery-img" src={g.img} alt={g.cap} loading="lazy" />
+            : <Placeholder className="ph-cover" tag={g.tag} dim={g.dim} light={i % 3 === 1} />}
           <span className="g-cap"><span className="num">N° {String(i + 1).padStart(2, '0')}</span>{g.cap}</span>
         </Reveal>
       ))}

@@ -698,3 +698,14 @@ body { transition: opacity 280ms ease; }
 
 /* Hide hover thumbs for v1 — re-enable when we have real product close-ups */
 .house-card .house-thumbs { display: none !important; }
+
+/* Gallery + Watches images — same fill behavior as house-img */
+.gallery-tile .gallery-img,
+.watch-card .watch-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  background: var(--bone-2);
+}
