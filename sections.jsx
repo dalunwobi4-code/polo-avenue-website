@@ -115,10 +115,10 @@ const Houses = () => (
 );
 
 const WATCHES = [
-  { brand: 'Rolex',   piece: 'Datejust 41',       ref: 'Ref. 126334',           tag: 'OYSTERSTEEL'        },
-  { brand: 'Cartier', piece: 'Pasha de Cartier',  ref: 'Diamonds · Rose Gold',  tag: 'PASHA',  img: 'images/watch-cartier.jpg' },
-  { brand: 'Chopard', piece: 'L.U.C XPS',         ref: 'Ref. 161948',           tag: 'ROSE GOLD'          },
-  { brand: 'Piaget',  piece: 'Polo Date',         ref: 'Ref. G0A41001',         tag: 'BLUE DIAL'          },
+  { brand: 'Rolex',   piece: 'Cosmograph Daytona',  ref: 'Rainbow · Rose Gold',   tag: 'RAINBOW',  img: 'images/rolex.jpeg' },
+  { brand: 'Cartier', piece: 'Ballon Bleu',          ref: 'Stainless · Blue Hands', tag: 'BALLON BLEU', img: 'images/cartier.jpg' },
+  { brand: 'Chopard', piece: 'Alpine Eagle XL Chrono', ref: 'Lucent Steel · Blue', tag: 'ALPINE EAGLE', img: 'images/chopard.jpg' },
+  { brand: 'Piaget',  piece: 'Polo S',                ref: 'Steel · Blue Dial',     tag: 'POLO S', img: 'images/piaget.jpg', objPos: 'center center' },
 ];
 
 const Watches = () => (
@@ -136,7 +136,7 @@ const Watches = () => (
       {WATCHES.map((w, i) => (
         <Reveal key={w.brand} delay={i * 80} className="watch-card">
           {w.img
-            ? <img className="ph-cover watch-img" src={w.img} alt={`${w.brand} ${w.piece}`} loading="lazy" />
+            ? <img className="ph-cover watch-img" src={w.img} alt={`${w.brand} ${w.piece}`} loading="lazy" style={w.objPos ? { objectPosition: w.objPos } : undefined} />
             : <Placeholder className="ph-cover" tag={w.tag} dim={w.brand.toUpperCase()} />}
           <div className="meta">
             <span className="num">0{i + 1} / Maison</span>
