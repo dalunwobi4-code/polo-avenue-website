@@ -74,8 +74,8 @@ const HOUSES = [
   { name: 'Saint Laurent',       cat: 'Maison · France',    cls: 'col-4 tall', img: 'images/house-03-saint-laurent.jpg' },
   { name: 'Dolce & Gabbana',     cat: 'Maison · Italy',     cls: 'col-4 tall', img: 'images/house-04-dolce-gabbana.jpg' },
   { name: 'Valentino',           cat: 'Maison · Italy',     cls: 'col-4 tall', img: 'images/house-05-valentino.jpg' },
-  { name: 'Casablanca',          cat: 'Maison · France',    cls: 'col-6 wide', img: 'images/house-06-casablanca.jpg' },
-  { name: 'Camilla',             cat: 'Maison · Australia', cls: 'col-6 wide', img: 'images/house-07-camilla.jpg' },
+  { name: 'Casablanca',          cat: 'Maison · France',    cls: 'col-6 wide', img: 'images/house-06-casablanca.jpg', objPos: 'center 18%' },
+  { name: 'Camilla',             cat: 'Maison · Australia', cls: 'col-6 wide', img: 'images/house-07-camilla.jpg',    objPos: 'center 22%' },
   { name: 'Versace',             cat: 'Maison · Italy',     cls: 'col-4 tall', img: 'images/house-08-versace.jpg' },
   { name: 'Anna-Karin Karlsson', cat: 'Eyewear · Sweden',   cls: 'col-4 tall', img: 'images/house-09-akk.jpg' },
   { name: 'Aquazzura',           cat: 'Maison · Italy',     cls: 'col-4 tall', img: 'images/house-10-aquazzura.jpg' },
@@ -84,7 +84,7 @@ const HOUSES = [
 const HouseCard = ({ h, idx }) => (
   <Reveal delay={idx * 60} className={`house-card ${h.cls}`}>
     {h.img
-      ? <img className="ph-cover house-img" src={h.img} alt={h.name} loading="lazy" />
+      ? <img className="ph-cover house-img" src={h.img} alt={h.name} loading="lazy" style={h.objPos ? { objectPosition: h.objPos } : undefined} />
       : <Placeholder className="ph-cover" tag={h.tag} dim={h.name.toUpperCase()} />}
     <div className="house-thumbs">
       <Placeholder className="thumb" tag="01" />
